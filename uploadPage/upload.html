@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+
+    <!-- Import Google Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+    </style>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="uploadPage.css">
+</head>
+<body>
+    
+    <!-- Toolbar Container -->
+    <div id="toolbar-container"></div>
+
+    <!-- Upload Form Section -->
+    <div class="container">
+        <h1>Upload Your File</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            
+            <!-- File Upload Button -->
+            <label class="upload-button">
+                Upload Image
+                <input type="file" name="myFile" id="fileInput" required hidden>
+            </label>
+
+            <!-- Image Preview Container -->
+            <div id="preview-container" class="selected-images" style="position: relative;">
+                
+                <!-- Drop Zone -->
+                <div id="dropZone" class="drop-zone">
+                    <p>Drag and drop an image here, or click to select one</p>
+                </div>
+
+                <!-- Remove Preview Button -->
+                <button id="removePreview" class="remove-preview" style="display: none;">&times;</button>
+
+                <!-- Image Preview -->
+                <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; border-radius: 8px;">
+            </div>
+
+            <!-- Confirm Upload Button -->
+            <button id="confirmUpload" class="confirm-upload" disabled type="button">
+                Confirm Upload
+            </button>
+
+            <!-- Message Display -->
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container gallery-container">
+        <h2>Gallery</h2>
+        <div id="gallery" class="gallery"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="uploadPage.js"></script>
+
+    <!-- Load Toolbar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toolbarContainer = document.getElementById("toolbar-container");
+
+            fetch("../toolbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Failed to load toolbar");
+                    return response.text();
+                })
+                .then(html => {
+                    toolbarContainer.innerHTML = html;
+                })
+                .catch(error => console.error("Error loading toolbar:", error));
+        });
+    </script>
+
+</body>
+</html>

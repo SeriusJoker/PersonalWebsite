@@ -1,0 +1,197 @@
+/* ---------------------- GENERAL STYLING ---------------------- */
+
+body {
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: #DCDCDD;
+    color: #46494C;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------------------- CONTAINER STYLING ---------------------- */
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+    background: #C5C3C6; /* Medium gray */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #46494C; /* Dark gray */
+}
+
+/* ---------------------- FORM STYLING ---------------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ---------------------- DROP ZONE ---------------------- */
+
+.drop-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #4C5C68; /* Slate blue-gray */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #46494C;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.drop-zone p {
+    margin: 0;
+    font-size: 16px;
+    color: #46494C;
+}
+
+.drop-zone.dragover {
+    background-color: #e6f7ff; /* Light blue */
+    border-color: #1985A1; /* Bright blue */
+}
+
+/* ---------------------- BUTTONS ---------------------- */
+
+.upload-button {
+    display: inline-block;
+    background-color: #28a745; /* Green */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-button:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+.upload-button input[type="file"] {
+    display: none; /* Hide the actual file input */
+}
+
+/* Confirm Upload Button */
+.confirm-upload {
+    padding: 10px;
+    background-color: #4C5C68; /* Slate blue-gray */
+    color: #DCDCDD;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.confirm-upload:hover {
+    background-color: #1985A1; /* Bright blue */
+    color: #DCDCDD;
+}
+
+.confirm-upload:disabled {
+    background-color: #b0b0b0;
+    color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* ---------------------- IMAGE PREVIEW ---------------------- */
+
+#preview-container {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#imagePreview {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    max-height: 300px;
+    border: 2px solid #4C5C68;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove Preview Button */
+.remove-preview {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0;
+}
+
+.remove-preview:hover {
+    background-color: #e60000;
+    transform: scale(1.1);
+}
+
+/* ---------------------- GALLERY STYLING ---------------------- */
+
+.gallery-container {
+    margin: 20px auto;
+    padding: 20px;
+    background: #C5C3C6; /* Medium gray */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1200px;
+    color: #DCDCDD;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------- MESSAGES ---------------------- */
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    color: #46494C;
+}
+
+.message.error {
+    color: #1985A1; /* Bright blue */
+}
